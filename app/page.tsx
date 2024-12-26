@@ -1,8 +1,8 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import groq from "groq";
 import { Client } from "@/lib/client";
 import { FiArrowRight } from "react-icons/fi";
+import Head from "next/head";
 
 interface Post {
   _id: string;
@@ -11,12 +11,6 @@ interface Post {
   publishedAt: string;
   preview?: string;
 }
-
-// Metadata for SEO
-export const metadata: Metadata = {
-  title: "Blog - Latest Posts",
-  description: "Read the latest posts from our blog.",
-};
 
 const fetchPosts = async (): Promise<Post[]> => {
   return Client.fetch(groq`
@@ -30,11 +24,21 @@ const fetchPosts = async (): Promise<Post[]> => {
   `);
 };
 
-const HomePage = async () => {
+const Index = async () => {
   const posts: Post[] = await fetchPosts();
 
   return (
     <div className="min-h-screen bg-white">
+      {/* SEO Head */}
+      <Head>
+        <title>Blog - Latest Posts</title>
+        <meta
+          name="description"
+          content="Read the latest posts from our blog."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
       {/* Header */}
       <header className="w-full py-20 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-12 max-w-5xl">
@@ -120,5 +124,4 @@ const HomePage = async () => {
   );
 };
 
-export default HomePage;
-export const dynamic = "force-dynamic"
+export default Index;
