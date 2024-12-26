@@ -55,22 +55,22 @@ const AboutPage = () => {
               {
                 name: "Sarah Johnson",
                 role: "Editor in Chief",
-                image: "/api/placeholder/400/400",
+                image: "/teamg1.png",
               },
               {
                 name: "Michael Chen",
                 role: "Lead Developer",
-                image: "/api/placeholder/400/400",
+                image: "/team1.jpg",
               },
               {
                 name: "Emily Davis",
                 role: "Content Strategist",
-                image: "/api/placeholder/400/400",
+                image: "/teamg2.jpg",
               },
               {
                 name: "David Kim",
                 role: "Creative Director",
-                image: "/api/placeholder/400/400",
+                image: "/team2.jpg",
               },
             ].map((member) => (
               <div key={member.name} className="group">
