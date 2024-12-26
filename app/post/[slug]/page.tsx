@@ -6,6 +6,7 @@ import { Client } from "@/lib/client";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { FiUser, FiCalendar, FiClock } from "react-icons/fi";
+import { PortableTextBlock } from "@portabletext/types";
 
 // Types remain the same
 type SanityImageSource = {
@@ -23,7 +24,7 @@ type Post = {
   authorImage: SanityImageSource;
   mainImage: SanityImageSource;
   publishedAt: string;
-  body: any;
+  body: PortableTextBlock[];
 };
 
 function urlFor(source: SanityImageSource) {
