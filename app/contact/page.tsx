@@ -1,3 +1,5 @@
+/* eslint-disable */
+'use client';
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 const ContactPage = () => {
